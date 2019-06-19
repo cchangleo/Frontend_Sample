@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && ts-node ./src/server/server.ts",
-    "build": "webpack --mode production",
+    "build": "npm run rm:dist && webpack --mode production",
     "rm:dist": "rimraf dist"
   },
   "author": "Sullivan Lee",
