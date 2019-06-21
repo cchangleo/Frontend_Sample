@@ -4,6 +4,7 @@ WORKDIR /app
 # 安装 nodemon 以实现热更新
 RUN npm install -g nodemon
 
+# Install deps
 COPY package*.json ./
 COPY pm2.json .
 
@@ -19,4 +20,5 @@ RUN pm2 install typescript
 # Expose ports (for orchestrators and dynamic reverse proxies)
 EXPOSE 3000
 
+# Start the app
 CMD [ "pm2-runtime", "start", "pm2.json", "--env", "production"]
